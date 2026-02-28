@@ -23,7 +23,7 @@ export default function Footer() {
                     {/* Social Links */}
                     <div className="flex space-x-6">
                         <a
-                            href="https://github.com/Sayan-Mondal2022"
+                            href="https://www.github.com/Sayan-Mondal2022"
                             target="_blank"
                             rel="noreferrer"
                             className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center text-soft hover:bg-accent hover:text-primary transition-all duration-300 shadow-[0_0_10px_rgba(0,0,0,0.5)] hover:shadow-[0_0_15px_rgba(252,163,17,0.5)]"
@@ -32,7 +32,7 @@ export default function Footer() {
                             <FiGithub size={20} />
                         </a>
                         <a
-                            href="https://linkedin.com/in/sayan-sm"
+                            href="https://www.linkedin.com/in/sayan-sm"
                             target="_blank"
                             rel="noreferrer"
                             className="w-10 h-10 rounded-full bg-secondary/50 flex items-center justify-center text-soft hover:bg-accent hover:text-primary transition-all duration-300 shadow-[0_0_10px_rgba(0,0,0,0.5)] hover:shadow-[0_0_15px_rgba(252,163,17,0.5)]"

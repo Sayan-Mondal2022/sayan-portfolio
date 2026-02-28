@@ -56,8 +56,8 @@ export default function Navbar() {
                         <Image
                             src="/logo.png"
                             alt="Sayan Mondal Logo"
-                            width={55}
-                            height={55}
+                            width={50}
+                            height={50}
                             className="object-contain hover:scale-105 transition-transform"
                             priority
                         />
