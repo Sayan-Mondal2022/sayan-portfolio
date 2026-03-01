@@ -18,7 +18,7 @@ export default async function Projects() {
     const query = `
         {
           user(login: "Sayan-Mondal2022") {
-            pinnedItems(first: 5, types: REPOSITORY) {
+            pinnedItems(first: 6, types: REPOSITORY) {
               nodes {
                 ... on Repository {
                   id
