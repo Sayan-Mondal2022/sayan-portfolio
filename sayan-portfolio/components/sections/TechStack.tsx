@@ -18,6 +18,7 @@ import {
   FaGitAlt,
   FaGithub,
   FaToolbox,
+  FaServer, 
 } from "react-icons/fa";
 
 import {
@@ -58,6 +59,7 @@ const iconRegistry: Record<string, IconType> = {
   flask: SiFlask,
   fastapi: SiFastapi ,
   next: SiNextdotjs,
+  "rest apis": FaServer, 
 
   /* ML / Data */
   "scikit-learn": SiScikitlearn,
