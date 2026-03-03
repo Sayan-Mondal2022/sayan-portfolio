@@ -4,7 +4,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
 import { Button } from "../ui/Button";
-import { FiGithub, FiLinkedin, FiMail, FiSend, FiCheckCircle, FiAlertCircle } from "react-icons/fi";
+import { FiSend, FiCheckCircle, FiAlertCircle } from "react-icons/fi";
+import { FaGithub, FaLinkedin, FaEnvelope  } from "react-icons/fa6";
 import { FadeInSection } from "../ui/FadeInSection";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -84,21 +85,21 @@ export default function Contact() {
                         <div>
                             <h3 className="text-2xl font-bold text-pure mb-4">Let's talk</h3>
                             <p className="text-soft/80 leading-relaxed text-sm">
-                                I am currently open to new opportunities. If you're looking for a dedicated software developer to join your team or build a project, don't hesitate to reach out.
+                                I’m currently open to new opportunities. If you’re looking for a dedicated software developer to contribute to your team or build impactful solutions, I’d be glad to connect.
                             </p>
                         </div>
 
                         <div className="space-y-4">
                             <a href="mailto:sayan.sm2024@gmail.com" className="flex items-center text-soft hover:text-accent transition-colors group p-3 rounded-lg hover:bg-white/5 cursor-pointer">
-                                <FiMail className="text-2xl mr-4 group-hover:scale-110 transition-transform duration-300" />
+                                <FaEnvelope  className="text-2xl mr-4 group-hover:scale-110 transition-transform duration-300" />
                                 <span className="font-mono text-sm">sayan.sm2024@gmail.com</span>
                             </a>
                             <a href="https://linkedin.com/in/sayan-sm" target="_blank" rel="noreferrer" className="flex items-center text-soft hover:text-accent transition-colors group p-3 rounded-lg hover:bg-white/5 cursor-pointer">
-                                <FiLinkedin className="text-2xl mr-4 group-hover:scale-110 transition-transform duration-300" />
+                                <FaLinkedin className="text-2xl mr-4 group-hover:scale-110 transition-transform duration-300" />
                                 <span className="font-mono text-sm">LinkedIn Profile</span>
                             </a>
                             <a href="https://github.com/Sayan-Mondal2022" target="_blank" rel="noreferrer" className="flex items-center text-soft hover:text-accent transition-colors group p-3 rounded-lg hover:bg-white/5 cursor-pointer">
-                                <FiGithub className="text-2xl mr-4 group-hover:scale-110 transition-transform duration-300" />
+                                <FaGithub className="text-2xl mr-4 group-hover:scale-110 transition-transform duration-300" />
                                 <span className="font-mono text-sm">GitHub Profile</span>
                             </a>
                         </div>
@@ -170,7 +171,7 @@ export default function Contact() {
                         <Button
                             type="submit"
                             variant="primary"
-                            className={`w-full flex justify-center items-center py-4 hover:scale-[1.02] transition-transform duration-300 ${status === "submitting" ? "opacity-70 cursor-not-allowed" : ""}`}
+                            className={`w-full flex justify-center items-center py-4 hover:scale-[1.02] transition-transform cursor-pointer duration-300 ${status === "submitting" ? "opacity-70 cursor-not-allowed" : ""}`}
                             disabled={status === "submitting" || status === "success"}
                         >
                             {status === "submitting" ? (

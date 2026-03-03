@@ -45,14 +45,13 @@ export default function Hero() {
                             Sayan Mondal.
                         </h1>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-soft mb-6">
-                            I build AI-driven solutions & scalable web apps.
+                            I build intelligent, scalable web apps powered by AI.
                         </h2>
                         <p className="text-lg text-soft/80 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed font-normal">
-                            I specialize in bridging the gap between cutting-edge Artificial Intelligence
-                            and robust, user-centric web applications.
+                            I focus on building practical AI solutions that integrate seamlessly into real-world applications.
                         </p>
 
-                        <motion.div
+                        {/* <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.6 }}
@@ -64,7 +63,40 @@ export default function Hero() {
                             <Button href="#contact" variant="outline" className="w-full sm:w-auto hover:scale-105 transition-transform duration-300 ease-out hover:cursor-pointer">
                                 Contact Me
                             </Button>
-                        </motion.div>
+                        </motion.div> */}
+
+                        <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.6 }}
+    className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+>
+    <Button
+        href="#projects"
+        variant="primary"
+        className="w-full sm:w-auto hover:scale-105 transition-transform duration-300 ease-out hover:cursor-pointer"
+    >
+        Check out my work!
+    </Button>
+
+    <Button
+        href="#contact"
+        variant="outline"
+        className="w-full sm:w-auto hover:scale-105 transition-transform duration-300 ease-out hover:cursor-pointer"
+    >
+        Contact Me
+    </Button>
+
+    <Button
+        href="https://drive.google.com/file/d/1jBAeg3r5eEMx5Xmrbu0qRLbKQs6rDpcj/view?usp=sharing"
+        variant="primary"
+        className="w-full sm:w-auto hover:scale-105 transition-transform duration-300 ease-out hover:cursor-pointer"
+        // target="_blank"
+    >
+        Download Resume
+    </Button>
+</motion.div>
+
                     </motion.div>
 
                     {/* Profile Image */}
@@ -77,15 +109,13 @@ export default function Hero() {
                         <div className="relative aspect-square w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[480px] rounded-2xl overflow-hidden shadow-2xl z-10 hover:shadow-[0_0_24px_6px_rgba(252,163,17,0.55)] transition-shadow duration-400 ease-in-out group cursor-pointer">
                             <div className="absolute inset-0 bg-accent/20 group-hover:bg-transparent transition-colors duration-500 z-20 pointer-events-none mix-blend-multiply" />
                             <Image
-                                src="/profile.jpg"
+                                src="/my_profile.png"
                                 alt="Sayan Mondal Profile"
                                 fill
-                                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
+                                className="object-cover group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                                 priority
                             />
                         </div>
-                        {/* Decorative Frame */}
-                        <div className="absolute top-4 left-[calc(50%-144px)] sm:top-6 sm:left-[calc(50%-184px)] lg:top-6 lg:-left-4 w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[480px] aspect-square border-2 border-accent rounded-2xl -z-10 transition-transform duration-500 hover:translate-x-2 hover:translate-y-2 pointer-events-none" />
                     </motion.div>
 
                 </div>
