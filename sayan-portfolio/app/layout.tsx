@@ -3,8 +3,8 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata = {
