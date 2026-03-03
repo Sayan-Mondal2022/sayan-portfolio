@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "../ui/SectionHeading";
 import { Button } from "../ui/Button";
 import { FiSend, FiCheckCircle, FiAlertCircle } from "react-icons/fi";
-import { FaGithub, FaLinkedin, FaEnvelope  } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa6";
 import { FadeInSection } from "../ui/FadeInSection";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -91,7 +91,7 @@ export default function Contact() {
 
                         <div className="space-y-4">
                             <a href="mailto:sayan.sm2024@gmail.com" className="flex items-center text-soft hover:text-accent transition-colors group p-3 rounded-lg hover:bg-white/5 cursor-pointer">
-                                <FaEnvelope  className="text-2xl mr-4 group-hover:scale-110 transition-transform duration-300" />
+                                <FaEnvelope className="text-2xl mr-4 group-hover:scale-110 transition-transform duration-300" />
                                 <span className="font-mono text-sm">sayan.sm2024@gmail.com</span>
                             </a>
                             <a href="https://linkedin.com/in/sayan-sm" target="_blank" rel="noreferrer" className="flex items-center text-soft hover:text-accent transition-colors group p-3 rounded-lg hover:bg-white/5 cursor-pointer">
