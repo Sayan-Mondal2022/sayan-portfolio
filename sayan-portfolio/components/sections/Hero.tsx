@@ -45,57 +45,43 @@ export default function Hero() {
                             Sayan Mondal.
                         </h1>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-soft mb-6">
-                            I build intelligent, scalable web apps powered by AI.
+                            I build intelligent,<br />
+                            AI-powered web apps.
                         </h2>
                         <p className="text-lg text-soft/80 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed font-normal">
                             I focus on building practical AI solutions that integrate seamlessly into real-world applications.
                         </p>
 
-                        {/* <motion.div
+                        <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.6 }}
                             className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
                         >
-                            <Button href="#projects" variant="primary" className="w-full sm:w-auto hover:scale-105 transition-transform duration-300 ease-out hover:cursor-pointer">
-                                Check out my work!
+                            <Button
+                                href="/#projects"
+                                variant="primary"
+                                className="w-full sm:w-auto hover:scale-105 transition-transform duration-300 ease-out hover:cursor-pointer"
+                            >
+                                View Projects
                             </Button>
-                            <Button href="#contact" variant="outline" className="w-full sm:w-auto hover:scale-105 transition-transform duration-300 ease-out hover:cursor-pointer">
-                                Contact Me
+
+                            <Button
+                                href="/#contact"
+                                variant="outline"
+                                className="w-full sm:w-auto hover:scale-105 transition-transform duration-300 ease-out hover:cursor-pointer"
+                            >
+                                Let’s Connect
                             </Button>
-                        </motion.div> */}
 
-                        <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ delay: 0.6 }}
-    className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
->
-    <Button
-        href="#projects"
-        variant="primary"
-        className="w-full sm:w-auto hover:scale-105 transition-transform duration-300 ease-out hover:cursor-pointer"
-    >
-        Check out my work!
-    </Button>
-
-    <Button
-        href="#contact"
-        variant="outline"
-        className="w-full sm:w-auto hover:scale-105 transition-transform duration-300 ease-out hover:cursor-pointer"
-    >
-        Contact Me
-    </Button>
-
-    <Button
-        href="https://drive.google.com/file/d/1jBAeg3r5eEMx5Xmrbu0qRLbKQs6rDpcj/view?usp=sharing"
-        variant="primary"
-        className="w-full sm:w-auto hover:scale-105 transition-transform duration-300 ease-out hover:cursor-pointer"
-        // target="_blank"
-    >
-        Download Resume
-    </Button>
-</motion.div>
+                            <Button
+                                href="https://drive.google.com/file/d/1jBAeg3r5eEMx5Xmrbu0qRLbKQs6rDpcj/view?usp=sharing"
+                                variant="primary"
+                                className="w-full sm:w-auto hover:scale-105 transition-transform duration-300 ease-out hover:cursor-pointer"
+                            >
+                                View Resume
+                            </Button>
+                        </motion.div>
 
                     </motion.div>
 

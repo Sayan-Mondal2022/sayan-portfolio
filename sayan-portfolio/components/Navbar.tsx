@@ -6,11 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 
 const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Tech Stack", href: "#tech-stack" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/#home" },
+    { name: "About", href: "/#about" },
+    { name: "Projects", href: "/#projects" },
+    { name: "Tech Stack", href: "/#tech-stack" },
+    { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -25,15 +25,36 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const scrollToSection = (
+        e: React.MouseEvent<HTMLAnchorElement | HTMLDivElement>,
+        href: string
+    ) => {
         e.preventDefault();
         setIsOpen(false);
-        const element = document.querySelector(href);
-        if (element) {
+
+        // Extract hash (works for "#home" and "/#home")
+        const hash = href.includes("#") ? href.split("#")[1] : null;
+
+        // If no hash or it's home → scroll to top
+        if (!hash || hash === "home") {
             window.scrollTo({
-                top: href === "#home" ? 0 : element.getBoundingClientRect().top + window.scrollY - 80,
+                top: 0,
                 behavior: "smooth",
             });
+
+            window.history.replaceState(null, "", "/");
+            return;
+        }
+
+        const element = document.getElementById(hash);
+
+        if (element) {
+            window.scrollTo({
+                top: element.offsetTop - 80,
+                behavior: "smooth",
+            });
+
+            window.history.replaceState(null, "", `/#${hash}`);
         }
     };
 
