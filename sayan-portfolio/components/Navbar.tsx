@@ -74,10 +74,10 @@ export default function Navbar() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
                                 whileHover={{ y: -2 }}
-                                className="text-soft hover:text-accent font-medium transition-colors text-sm uppercase tracking-wider relative group"
+                                className="text-soft hover:text-accent font-medium transition-colors text-sm uppercase tracking-wider relative group py-1"
                             >
                                 {link.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full"></span>
+                                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                             </motion.a>
                         ))}
                     </div>

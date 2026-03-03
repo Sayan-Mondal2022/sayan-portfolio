@@ -18,7 +18,7 @@ import {
   FaGitAlt,
   FaGithub,
   FaToolbox,
-  FaServer, 
+  FaServer,
 } from "react-icons/fa";
 
 import {
@@ -38,8 +38,8 @@ import {
   SiHtml5,
   SiCss3,
   SiTypescript,
-  SiFlask, 
-  SiFastapi, 
+  SiFlask,
+  SiFastapi,
 } from "react-icons/si";
 
 import { VscVscode } from "react-icons/vsc";
@@ -57,9 +57,9 @@ const iconRegistry: Record<string, IconType> = {
   /* Backend / Frameworks */
   node: FaNodeJs,
   flask: SiFlask,
-  fastapi: SiFastapi ,
+  fastapi: SiFastapi,
   next: SiNextdotjs,
-  "rest apis": FaServer, 
+  "rest apis": FaServer,
 
   /* ML / Data */
   "scikit-learn": SiScikitlearn,
@@ -148,7 +148,7 @@ export default function TechStack() {
                     <motion.div
                       key={skill}
                       variants={itemVariants}
-                      className="flex flex-col items-center justify-center p-6 bg-secondary/20 rounded-xl border border-white/5 hover:border-accent hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
+                      className="flex flex-col items-center justify-center p-6 bg-secondary/20 rounded-xl border border-white/5 hover:border-accent/40 hover:-translate-y-1 hover:shadow-[0_8px_20px_-8px_rgba(252,163,17,0.3)] transition-all duration-300 group cursor-pointer"
                     >
                       <div className="w-12 h-12 flex items-center justify-center mb-4 rounded-full bg-primary/50 group-hover:bg-accent/10 transition-colors duration-300">
                         <span className="text-accent group-hover:scale-125 transition-transform duration-300">
