@@ -8,34 +8,38 @@ interface Repo {
     description: string;
     url: string;
     homepageUrl: string | null;
-    primaryLanguage: {
-        name: string;
-    } | null;
+    languages: {
+        nodes: {
+            name: string;
+        }[];
+    };
     stargazerCount: number;
 }
 
 export default async function Projects() {
     const query = `
-        {
-          user(login: "Sayan-Mondal2022") {
-            pinnedItems(first: 6, types: REPOSITORY) {
-              nodes {
-                ... on Repository {
-                  id
-                  name
-                  description
-                  url
-                  homepageUrl
-                  stargazerCount
-                  primaryLanguage {
-                    name
-                  }
-                }
-              }
+{
+  user(login: "Sayan-Mondal2022") {
+    pinnedItems(first: 5, types: REPOSITORY) {
+      nodes {
+        ... on Repository {
+          id
+          name
+          description
+          url
+          homepageUrl
+          stargazerCount
+          languages(first: 10) {
+            nodes {
+              name
             }
           }
         }
-    `;
+      }
+    }
+  }
+}
+`;
 
     const res = await fetch("https://api.github.com/graphql", {
         method: "POST",
@@ -118,11 +122,14 @@ export default async function Projects() {
                                 </p>
 
                                 <div className="flex flex-wrap items-center mt-auto space-x-3 gap-y-2">
-                                    {project.primaryLanguage && (
-                                        <span className="text-xs font-mono text-accent/90 bg-accent/10 px-2 py-1 rounded-md group-hover:bg-accent/20 transition-colors duration-300">
-                                            {project.primaryLanguage.name}
+                                    {project.languages.nodes.map((lang) => (
+                                        <span
+                                            key={lang.name}
+                                            className="text-xs font-mono text-accent/90 bg-accent/10 px-2 py-1 rounded-md group-hover:bg-accent/20 transition-colors duration-300"
+                                        >
+                                            {lang.name}
                                         </span>
-                                    )}
+                                    ))}
                                     {project.stargazerCount > 0 && (
                                         <span className="text-xs font-mono text-soft/60 px-2 py-1 rounded-md group-hover:text-soft/90 transition-colors duration-300">
                                             ⭐ {project.stargazerCount}
