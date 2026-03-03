@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 
@@ -25,38 +26,7 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const scrollToSection = (
-        e: React.MouseEvent<HTMLAnchorElement | HTMLDivElement>,
-        href: string
-    ) => {
-        e.preventDefault();
-        setIsOpen(false);
-
-        // Extract hash (works for "#home" and "/#home")
-        const hash = href.includes("#") ? href.split("#")[1] : null;
-
-        // If no hash or it's home → scroll to top
-        if (!hash || hash === "home") {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-            });
-
-            window.history.replaceState(null, "", "/");
-            return;
-        }
-
-        const element = document.getElementById(hash);
-
-        if (element) {
-            window.scrollTo({
-                top: element.offsetTop - 80,
-                behavior: "smooth",
-            });
-
-            window.history.replaceState(null, "", `/#${hash}`);
-        }
-    };
+    const closeMobileMenu = () => setIsOpen(false);
 
     return (
         <nav
@@ -72,34 +42,38 @@ export default function Navbar() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         className="flex-shrink-0 cursor-pointer"
-                        onClick={(e) => scrollToSection(e as any, "#home")}
                     >
-                        <Image
-                            src="/logo.png"
-                            alt="Sayan Mondal Logo"
-                            width={50}
-                            height={50}
-                            className="object-contain hover:scale-105 transition-transform"
-                            priority
-                        />
+                        <Link href="/#home" onClick={closeMobileMenu}>
+                            <Image
+                                src="/logo.png"
+                                alt="Sayan Mondal Logo"
+                                width={50}
+                                height={50}
+                                className="object-contain hover:scale-105 transition-transform"
+                                priority
+                            />
+                        </Link>
                     </motion.div>
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex space-x-8 items-center">
                         {navLinks.map((link, i) => (
-                            <motion.a
+                            <motion.div
                                 key={link.name}
-                                href={link.href}
-                                onClick={(e) => scrollToSection(e as any, link.href)}
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
                                 whileHover={{ y: -2 }}
-                                className="text-soft hover:text-accent font-medium transition-colors text-sm uppercase tracking-wider relative group py-1"
+                                className="relative group py-1"
                             >
-                                {link.name}
-                                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                            </motion.a>
+                                <Link
+                                    href={link.href}
+                                    className="text-soft hover:text-accent font-medium transition-colors text-sm uppercase tracking-wider relative block"
+                                >
+                                    {link.name}
+                                    <span className="absolute bottom-0 left-0 w-full h-[2px] bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                                </Link>
+                            </motion.div>
                         ))}
                     </div>
 
@@ -127,14 +101,14 @@ export default function Navbar() {
                     >
                         <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col">
                             {navLinks.map((link) => (
-                                <a
+                                <Link
                                     key={link.name}
                                     href={link.href}
-                                    onClick={(e) => scrollToSection(e as any, link.href)}
+                                    onClick={closeMobileMenu}
                                     className="block px-3 py-3 rounded-md text-base font-medium text-soft hover:text-primary hover:bg-accent transition-colors"
                                 >
                                     {link.name}
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </motion.div>
